@@ -72,13 +72,12 @@ public class AdminService {
         return new BookResponseDto(book);
     }
 
-    // Category Methods
 
 
     public Category getCategoryById(long categoryId) {
         Category category = categoryService.getCategoryById(categoryId);
         return category;
-      //  return new CategoryResponseDto(category);
+    
     }
 
     public Category createCategory(Category categoryRequestDto) {
@@ -86,7 +85,7 @@ public class AdminService {
                 categoryRequestDto.getName(),
                 categoryRequestDto.getDescription());
                return  category;
-        //  return new CategoryResponseDto(category);
+      
     }
 
     public Category modifyCategoryById(long categoryId, Category categoryRequestDto) {
@@ -94,7 +93,7 @@ public class AdminService {
         commonMethods.updateCategoryFromCategoryReqDto(category, categoryRequestDto);
         category = categoryService.modifyCategory(category);
         return category;
-        //return new CategoryResponseDto(category);
+      
     }
 
     public Category deleteCategoryById(long categoryId) {
