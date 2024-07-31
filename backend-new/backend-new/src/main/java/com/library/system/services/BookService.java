@@ -113,8 +113,7 @@ public class BookService {
     }
 
     public void assignBookToUser(User user, Book book) {
-        // This method is similar to assignBooksToUser
-        // Ensure it has a distinct purpose or merge with assignBooksToUser
+       
         UserBook userBook = new UserBook();
         userBook.setUser(user);
         userBook.setBook(book);
@@ -123,24 +122,24 @@ public class BookService {
     }
 
     public List<Book> getAllBooksByCategoryId(long categoryId) {
-        // Assuming you have a method in the repository to find books by categoryId
+       
         return bookRepository.findAllByCategoryId(categoryId);
     }
 
     public void assignBooksToUserId(long userId, Book book) {
-        // Find the user by ID
+    
         Optional<User> userOptional = userRepository.findById(userId);
 
 
 
         User user = userOptional.get();
 
-        // Create a new UserBook entity to represent the relationship
+       
         UserBook userBook = new UserBook();
         userBook.setUser(user);
         userBook.setBook(book);
 
-        // Save the relationship
+     
         userBookRepository.save(userBook);
     }
 
